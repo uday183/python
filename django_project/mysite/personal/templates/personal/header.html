@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>uday kumar</title>
+	<meta charset="utf-8">
+
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'personal/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'personal/js/bootstrap.min.js' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'personal/js/jquery.min.js' %}">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<style type="text/css">
+		html,body{
+			height: :100%;
+		}
+	</style>
+</head>
+<body class="body" style="background-color:#f6f6f6">
+	<div class="container-fluid" style="min-height:95%;">
+		<div class="row">
+			<div class="col-sm-2">
+				<br>
+				<center>
+					<img src="{% static 'personal/img/uday.jpg' %}" class="responsive-img" style="max-height:100px;" alt="logo">
+				</center>
+			</div>
+			<div class="col-sm-10">
+				<br>
+				<center>
+					<h3>uday personal blog</h3>
+				</center>
+			</div>
+		</div><hr>
+		<div class="row">
+			<div class="col-sm-2">
+				<br>
+				<br>
+				<div class="well bs -sidebar" id="sidebar" style="background-color:#fff;">
+					<ul class="nav nav-pills nav-stacked">
+						<li><a href="/">Home</a></li>
+						<li><a href="/blog">Blog</a></li>
+						<li><a href="/contact">Contact</a></li>
+					</ul>
+				</div><!--well bs-sidebar -->
+			</div><!--col-sm-2 -->
+			<div class="col-sm-10">
+				<div class="container-fluid">
+					<br><br>
+					
+
+					{% block content %}
+					{% endblock %}
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div>
+		<br><br>
+			<p align="center"><a href="#" target="blank">Contact</a>|<a href="https://in.linkedin.com/" target="blank">LinkedIn</a>|<a href="https://twitter.com/login" target="blank">Twitter</a>|<a href="https://plus.google.com" target="blank">Google+</a></p>
+			</div>
+	</footer>	
+
+</body>
+</html>

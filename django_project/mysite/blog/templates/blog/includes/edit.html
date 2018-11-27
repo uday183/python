@@ -1,0 +1,29 @@
+
+{% extends  "personal/header.html" %}
+
+{% block content %}
+
+<style>
+.form-control {
+    width: 50%;
+    }
+</style>
+<div class="container">
+    <form method='post'>
+    {% csrf_token %}
+
+ <label>Name:</label><input type="text" value="{{edit_data.name}}" name="name" class="form-control" />
+      <label>Age:</label><input type="text" value="{{edit_data.age}}" name="age" class="form-control" />
+      <label>Company:</label><input type="text" value="{{edit_data.company}}" name="company" class="form-control" />
+      <label>Place:</label><input type="text" value="{{edit_data.place}}" name="place" class="form-control" />
+      <label>Designation:</label><input type="text" value="{{edit_data.designation}}" name="designation" class="form-control" /></br>
+      </div>
+  
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <input id="edit_id" name="edit_id" type="hidden" value="{{edit_data.pk}}">
+      </div>
+
+  </form>
+</div>
+{% endblock %}

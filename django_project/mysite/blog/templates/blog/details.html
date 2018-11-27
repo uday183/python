@@ -1,0 +1,97 @@
+{% extends  "personal/header.html" %}
+
+
+{% block content %}
+
+<head>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+</head>
+</head>
+<div class="btn-group">
+    <a href="/blog/d_create/" class="btn btn-primary active">
+        <i class="glyphicon glyphicon-plus" aria-hidden="true"></i> Create
+    </a>
+</div>
+
+
+<div class="container">
+  <h2>Employee Details</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Company</th>
+        <th>place</th>
+        <th>designation</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for each in data %}
+      <tr>
+    
+
+    <td>{{each.name}}</td>
+    <td>{{each.age}}</td>
+    <td>{{each.company}}</td>
+    <td>{{each.place}}</td>
+    <td>{{each.designation}}</td>
+  
+    <td><div class="btn-group">
+    <a href="/blog/edits/?edit_id={{each.pk}}" class="btn btn-primary active">
+        <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i> Edit
+    </a>
+    </div>
+    <div class="btn-group">
+    <a href="/blog/delete/?delete_id={{each.pk}}" class="btn btn-primary active">
+        <i class="glyphicon glyphicon-remove" aria-hidden="true"></i> Delete
+    </a>
+    </div>
+    </td>
+
+      </tr>      
+     {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+<script>
+function edit(pk, name, age, operation){
+  
+var name = name;
+var age = age;
+var operation=operation;
+if (operation){
+  var new_name =  prompt("enter name");
+var new_age =  prompt("enter age");
+}
+
+else{
+
+}
+ $.ajax({
+
+      type: 'POST',
+      url: '/blog/d_edit/',
+      data: {
+          "pk": pk,
+          "name": new_name,
+          "age":new_age,
+          "operation":operation,
+          
+      },
+      success: function (data) {
+          if (data.status){
+            window.location.reload();
+          }
+          window.location.reload();
+      }
+
+  });
+}
+</script>
+{% endblock %}
+
+
