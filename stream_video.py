@@ -14,6 +14,8 @@ class RangeFileWrapper(object):
             self.filelike.close()
 
     def __iter__(self):
+	""" utilty method
+	"""
         return self
 
     def __next__(self):
