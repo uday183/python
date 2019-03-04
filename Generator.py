@@ -12,7 +12,6 @@ for each in test_generator():
 #they generate values on fly
 
 #with use of generator's 
-
 def test_fib_on_gen(n):
 	a = b = 1
 	for each in range(n):
