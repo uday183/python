@@ -41,7 +41,32 @@ for each in lis:
 print (product)
 
 #above one we can write with reduce 
+
+
+
+
 from functools import reduce
 product = reduce((lambda x, y : x*y),[1,2,3,4])
 print (product)
 
+
+
+
+
+
+
+####sets###
+
+
+
+my_lists = ['a','b','c','b','c']
+dups = []
+for each in my_lists:
+	if my_lists.count(each) > 1:
+		if each not in dups:
+			dups.append(each)
+
+print (dups)
+
+#above one we can use sets
+print (set([each for each in my_lists if my_lists.count(each) > 1]))
