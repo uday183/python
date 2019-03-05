@@ -30,11 +30,16 @@ test_deco(2,3)
 
 
 #function as no parameter
-def make_deco(f):
-    def iner_func():
-        print('calling deco')
-        f()
-    return iner_func
-@make_deco
-def ordi():
-   print ('calling ordinary')
+def deco(f):
+	def inner_deco():
+		print ('decorator is calling...')
+	return inner_deco
+
+
+@deco
+def test_deco():
+	print ('test_deco is calling...')
+
+test_deco()
+#output: decorator is calling...
+
