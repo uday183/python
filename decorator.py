@@ -27,3 +27,14 @@ def test_deco(v1,v2):
 
 
 test_deco(2,3)
+
+
+#function as no parameter
+def make_deco(f):
+    def iner_func():
+        print('calling deco')
+        f()
+    return iner_func
+@make_deco
+def ordi():
+   print ('calling ordinary')
