@@ -43,3 +43,39 @@ def test_deco():
 test_deco()
 #output: decorator is calling...
 
+
+#realtime examples
+
+
+def deco(fun):
+	def inner_deco(list_values):
+		return [fun(v) for v in list_values]
+	return inner_deco
+
+@deco
+def strings(value):
+	return ''.join([word.capitalize() for word in value.split('_')])
+
+print (strings(['uday_kumar_punna']))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
